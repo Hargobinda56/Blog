@@ -11,7 +11,10 @@
     --slate-400: #94a3b8;
     --slate-800: #1e293b;
     }
-    
+    html{
+        scroll-behavior: smooth;
+        scroll-padding: 4rem;
+    }
     body{
     position: relative;
     background-color: var(--slate-200);
@@ -53,18 +56,54 @@
         list-style-type: none;
     
     }
+    .nav-items>li a{
+        color: #1e293b;
+        font-size: large;
+        font-weight: 600;
+    }
+
     .nav-search{
         display: flex;
         flex-direction: row-reverse;
     }
-    .carousel{
-        max-height: 480px;
+    .nav-search-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
     }
-    .carousel > img{
-        width: 100%;
-        max-height: 480px;
-        object-fit: cover;
+    .search-button{
+        display: none;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 0;
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
     }
+    .search-input{
+        display: block;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 0;
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+    }
+    .search-cancel{
+        display: none;
+    }
+    .carousel-item {
+        height: 500px;
+    }
+
+    @media (max-width: 768px) {
+        .carousel-item {
+            height: 300px;
+        }
+    }
+      @media (max-width: 576px) {
+        /* Adjust the height for even smaller screens */
+        .carousel-item img {
+          height: 200px;
+        }
+      }
     #news{
          padding: 2rem;
 
@@ -77,6 +116,9 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
+    }
+    .news-feed>a{
+        display: block;
     }
     
     .news-card{
@@ -95,6 +137,13 @@
         width: 100%;
         border-radius: 3px;
     }
+    .news-details > h4{
+        font-size: large;
+        font-weight: 600;
+        margin: 1rem 0;
+        text-decoration: underline;
+
+    }
     
 
     #events{
@@ -103,7 +152,7 @@
     .upcoming-events{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-        grid-gap: 2rem;
+        grid-gap: 0.8rem;
         
     }
     .event-card{
@@ -123,23 +172,35 @@
         padding: 2rem;
     }
 
+    .event-description > h4{
+         font-size: large;
+         font-weight: 600;
+         margin-bottom: 1rem;
+         text-decoration: underline;
+    }
+
 
     #jobs{
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
    .job-listings{
-      display: flex;
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     
    }
    .job-card{
        background: white;
        filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
        border-radius: 6px;
-       margin: 0.8rem;
        transition: transform 0.3s ease-in-out; 
+   }
+   .job-card > img{
+    border-radius: 6px 6px 0 0;
    }
 
    .job-card:hover{
@@ -148,13 +209,35 @@
     transform: translateY(-5px);
 }
 
-.job-card > h4{
+.job-description > h4{
     font-style: var(--slate-800);
     font-size: larger;
     font-weight: 600;
     margin-bottom: 1rem;
 }
+.job-description{
+     padding: 2rem;
+}
 
+
+@media only screen and (max-width: 800px) {
+.search-button{
+        display: block;
+}
+.search-input{
+    display: none;
+}
+.search-cancel{
+    display: none;
+}
+.active{
+    display: block;
+}
+.inactive{
+    display: none;
+}
+ 
+}
 
 
 
