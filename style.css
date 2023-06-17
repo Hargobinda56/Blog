@@ -1,5 +1,4 @@
 
-
 *, *::before, *::after{
     box-sizing: border-box;
     }
@@ -32,7 +31,7 @@
     nav{
         position: fixed;
         z-index: 100;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(200, 200, 200, 0.5);
         backdrop-filter: blur(5px);
         border-bottom: 1px solid rgba(255, 255, 255, 0.7);
         width: 100%;
@@ -42,20 +41,36 @@
         padding: 1rem;
 
     }
+    
+   .svg > img{
+      height: 50px;
+      width: 50px;
+   }
     section{
         display: block;
         width: 100%;
         padding-bottom: 1rem;
         
     }
+    .nav-items-container{
+        display: grid;
+        place-items: center;
+    }
     .nav-items{
         display: flex;
-        align-items: center;
         justify-content: center;
-        gap:2rem;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        gap:1rem;
         list-style-type: none;
     
     }
+    .nav-items > li{
+        display: block;
+    }
+    
     .nav-items>li a{
         color: #1e293b;
         font-size: large;
@@ -89,21 +104,35 @@
     .search-cancel{
         display: none;
     }
-    .carousel-item {
-        height: 500px;
-    }
 
-    @media (max-width: 768px) {
+    .tales {
+        width: 100%;
+      } 
+      .carousel-inner{
+        width:100%;
+        max-height: 400px !important;
+      }
+
+      .carousel-item img {
+        width: 100%;
+        height: auto;
+      }
+      
+
+    /* @media (max-width: 768px) {
         .carousel-item {
             height: 300px;
         }
     }
       @media (max-width: 576px) {
-        /* Adjust the height for even smaller screens */
         .carousel-item img {
           height: 200px;
         }
-      }
+      } */
+
+      /* -----------carousel-------------- */
+      
+
     #news{
          padding: 2rem;
 
@@ -198,6 +227,7 @@
        filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
        border-radius: 6px;
        transition: transform 0.3s ease-in-out; 
+       height: 100%;
    }
    .job-card > img{
     border-radius: 6px 6px 0 0;
@@ -219,6 +249,28 @@
      padding: 2rem;
 }
 
+.site-footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .site-footer p {
+    color: #888;
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .site-footer a {
+    color: #555;
+    text-decoration: none;
+  }
+  
+  .site-footer a:hover {
+    color: #333;
+  }
+  
+
 
 @media only screen and (max-width: 800px) {
 .search-button{
@@ -236,8 +288,27 @@
 .inactive{
     display: none;
 }
+
+.upcoming-events{
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.event-card{
+    flex-direction: column;
+}
+.event-card >img{
+    max-width: 100%;
+    border-radius: 6px 6px 0 0;
+}
  
 }
+
+
+@media (min-width: 1000px) {
+    .carousel-item img {
+      max-height: 700px;
+    }
+  }
+
 
 
 
